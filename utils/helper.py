@@ -157,6 +157,7 @@ def get_dataloader(args, run, train_domains, test_domains, kwargs):
     elif args.dataset_name == 'pacs':
         from data.pacs.pacs_loader import PACS
 
+    ## import pdb; pdb.set_trace();
     if args.dataset_name in ['pacs', 'vlcs']:
         train_data_obj= PACS(args, train_domains, f'{args.root_dir}/pacs/train_val_splits/', data_case='train')
         val_data_obj= PACS(args, train_domains, f'{args.root_dir}/pacs/train_val_splits/', data_case='val')        

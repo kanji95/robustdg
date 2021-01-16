@@ -23,7 +23,7 @@ from utils.match_function import *
 
 # Input Parsing
 parser = argparse.ArgumentParser()
-parser.add_argument('--root_dir', type=str, default='/Documents/research/domain_generalization/datasets')
+parser.add_argument('--root_dir', type=str, default='/ssd_scratch/cvit/kanishk')
 parser.add_argument('--dataset_name', type=str, default='rot_mnist', 
                     help='Datasets: rot_mnist; fashion_mnist; pacs')
 parser.add_argument('--method_name', type=str, default='erm_match', 
@@ -34,7 +34,7 @@ parser.add_argument('--train_domains', nargs='+', type=str, default=["art_painti
                     help='List of train domains')
 parser.add_argument('--test_domains', nargs='+', type=str, default=["sketch"], 
                     help='List of test domains')
-parser.add_argument('--out_classes', type=int, default=10, 
+parser.add_argument('--out_classes', type=int, default=7, 
                     help='Total number of classes in the dataset')
 parser.add_argument('--img_c', type=int, default= 3, 
                     help='Number of channels of the image in dataset')
@@ -52,7 +52,7 @@ parser.add_argument('--rep_dim', type=int, default=250,
                     help='Representation dimension for contrsative learning')
 parser.add_argument('--pre_trained',type=int, default=0, 
                     help='0: No Pretrained Architecture; 1: Pretrained Architecture')
-parser.add_argument('--perfect_match', type=int, default=1, 
+parser.add_argument('--perfect_match', type=int, default=0, 
                     help='0: No perfect match known (PACS); 1: perfect match known (MNIST)')
 parser.add_argument('--opt', type=str, default='sgd', 
                     help='Optimizer Choice: sgd; adam') 
@@ -60,7 +60,7 @@ parser.add_argument('--lr', type=float, default=0.01,
                     help='Learning rate for training the model')
 parser.add_argument('--batch_size', type=int, default=16, 
                     help='Batch size foe training the model')
-parser.add_argument('--epochs', type=int, default=15, 
+parser.add_argument('--epochs', type=int, default=10, 
                     help='Total number of epochs for training the model')
 parser.add_argument('--penalty_s', type=int, default=-1, 
                     help='Epoch threshold over which Matching Loss to be optimised')

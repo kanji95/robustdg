@@ -94,6 +94,7 @@ def get_matched_pairs(args, cuda, train_dataset, domain_size, total_domains, tra
         print('Base Domain: ', base_domain_size, base_domain_idx, y_c )    
     
     # Applying the random permutation tensor
+    ## import pdb; pdb.set_trace();
     for domain_idx in range(total_domains):                        
         total_rand_counter=0
         total_data_idx=0

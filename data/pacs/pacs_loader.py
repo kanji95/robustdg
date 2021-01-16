@@ -19,6 +19,7 @@ class PACS(BaseDataLoader):
     def __init__(self, args, list_train_domains, root, transform=None, data_case='train'):
         
         super().__init__(args, list_train_domains, root, transform, data_case) 
+        self.root = root
         self.train_data, self.train_labels, self.train_domain, self.train_indices = self._get_data()
 
     def _get_data(self):
