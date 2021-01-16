@@ -158,9 +158,9 @@ def get_dataloader(args, run, train_domains, test_domains, kwargs):
         from data.pacs.pacs_loader import PACS
 
     if args.dataset_name in ['pacs', 'vlcs']:
-        train_data_obj= PACS(args, train_domains, '/pacs/train_val_splits/', data_case='train')
-        val_data_obj= PACS(args, train_domains, '/pacs/train_val_splits/', data_case='val')        
-        test_data_obj= PACS(args, test_domains, '/pacs/train_val_splits/', data_case='test')
+        train_data_obj= PACS(args, train_domains, f'{args.root_dir}/pacs/train_val_splits/', data_case='train')
+        val_data_obj= PACS(args, train_domains, f'{args.root_dir}/pacs/train_val_splits/', data_case='val')        
+        test_data_obj= PACS(args, test_domains, f'{args.root_dir}/pacs/train_val_splits/', data_case='test')
     elif args.dataset_name in ['rot_mnist', 'fashion_mnist']:
         train_data_obj=  MnistRotated(args, train_domains, run, '/RobustDG/robustdg/data/rot_mnist', data_case='train')
         val_data_obj=  MnistRotated(args, train_domains, run, '/RobustDG/robustdg/data/rot_mnist', data_case='val')

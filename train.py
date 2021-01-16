@@ -23,6 +23,7 @@ from utils.match_function import *
 
 # Input Parsing
 parser = argparse.ArgumentParser()
+parser.add_argument('--root_dir', type=str, default='../datasets')
 parser.add_argument('--dataset_name', type=str, default='rot_mnist', 
                     help='Datasets: rot_mnist; fashion_mnist; pacs')
 parser.add_argument('--method_name', type=str, default='erm_match', 
