@@ -23,20 +23,20 @@ from utils.match_function import *
 
 # Input Parsing
 parser = argparse.ArgumentParser()
-parser.add_argument('--root_dir', type=str, default='../datasets')
+parser.add_argument('--root_dir', type=str, default='/Documents/research/domain_generalization/datasets')
 parser.add_argument('--dataset_name', type=str, default='rot_mnist', 
                     help='Datasets: rot_mnist; fashion_mnist; pacs')
 parser.add_argument('--method_name', type=str, default='erm_match', 
                     help=' Training Algorithm: erm_match; matchdg_ctr; matchdg_erm')
 parser.add_argument('--model_name', type=str, default='resnet18', 
                     help='Architecture of the model to be trained')
-parser.add_argument('--train_domains', nargs='+', type=str, default=["15", "30", "45", "60", "75"], 
+parser.add_argument('--train_domains', nargs='+', type=str, default=["art_painting", "cartoon", "photo"], 
                     help='List of train domains')
-parser.add_argument('--test_domains', nargs='+', type=str, default=["0", "90"], 
+parser.add_argument('--test_domains', nargs='+', type=str, default=["sketch"], 
                     help='List of test domains')
 parser.add_argument('--out_classes', type=int, default=10, 
                     help='Total number of classes in the dataset')
-parser.add_argument('--img_c', type=int, default= 1, 
+parser.add_argument('--img_c', type=int, default= 3, 
                     help='Number of channels of the image in dataset')
 parser.add_argument('--img_h', type=int, default= 224, 
                     help='Height of the image in dataset')

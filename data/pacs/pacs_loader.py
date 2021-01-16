@@ -52,6 +52,7 @@ class PACS(BaseDataLoader):
             ])
             
 
+        ## import pdb; pdb.set_trace();
         for domain in self.list_train_domains:
             if self.data_case == 'train':
                 domain_data = h5py.File(data_dir + domain + '_' + 'train.hdf5','r')
